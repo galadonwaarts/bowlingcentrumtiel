@@ -1,0 +1,12 @@
+{
+  "name": "acf/videoblock",
+  "title": "Video blok",
+  "description": "Video block",
+  "category": "custom",
+  "icon": "admin-comments",
+  "keywords": ["video", "wide", "block"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "block.php"
+  }
+}

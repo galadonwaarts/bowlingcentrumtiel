@@ -1,0 +1,138 @@
+
+/* GUTENBERG*/
+/* ==================================== */
+.gutenberg {
+
+    .wp-block-image, .wp-block-embed {
+        @apply overflow-hidden my-10;
+        /* @apply overflow-hidden my-10 xl:ml-[-100px] xl:mr-[-100px]; */
+
+        figcaption {
+            @apply text-sm text-gray-600 mt-0 bg-gray-100 py-3 px-6 text-center block;
+        }
+    }
+
+    .widget_media_image .wp-block-image {
+        @apply mt-0;
+    }
+
+
+    /* BLOCKQUOTE */
+    blockquote {
+        @apply relative mb-10;
+
+        p {
+            @apply text-2xl lg:text-4xl font-serif italic text-gray-700 my-10;
+
+            &:before {
+                @apply content-['“'] text-6xl text-primary absolute -left-8 -top-4;
+            }
+        }
+
+        cite {
+            @apply block text-sm text-gray-600 mt-0 py-3;
+        }
+    }
+
+
+    /* TEXT AND IMAGE */
+    .wp-block-media-text {
+        direction: unset;
+        @apply max-lg:grid-cols-1 gap-10 mt-10 mb-10 #{!important};
+
+        .wp-block-media-text__media {
+            //@apply [&_img]:rounded-2xl;
+        }
+
+        .wp-block-media-text__content {
+            @apply max-lg:col-span-1 max-lg:row-span-2 px-0;
+        }
+
+        &.has-media-on-the-right {
+            .wp-block-media-text__media {
+                @apply max-lg:col-span-1;
+            }
+        }
+    }
+
+
+    .wp-block-media-text.has-media-on-the-right {
+        @apply flex-col-reverse lg:flex-row;
+
+        .wp-block-media-text__content {
+            @apply pl-0 xl:pl-0 lg:pr-10 xl:pr-14;
+        }
+    }
+    
+}
+
+
+// GRAVITY FORMS
+// ====================================
+.gform_heading {
+    @apply text-2xl font-bold text-primary mb-5 text-center;
+}
+
+.gform_body {
+    @apply text-base leading-7 text-primary bg-white rounded-2xl p-8;
+
+
+
+    .gform_fields {
+        @apply mb-5;
+
+        .ginput_container {
+            @apply mb-5;
+
+            label {
+                @apply block text-sm text-primary mb-2;
+            }
+
+        }
+
+        .ginput_container_date input {
+            width: 100% !important;
+        }
+
+        :where(input[type=text], input[type=email], input[type=tel], input[type=url], input[type=number], input[type=password], textarea) {
+            @apply block w-full border border-gray-200 rounded-md px-6 py-4 text-base text-primary leading-6 focus:outline-none focus:border-primary;
+        }
+
+        input[type=checkbox], input[type=radio] {
+            @apply inline-block border border-gray-200 rounded-lg px-3 py-2 text-base text-primary leading-6 focus:outline-none focus:border-primary accent-primary;
+        }
+
+        input[type=checkbox] {
+            @apply mr-2;
+        }
+
+        select {
+            -webkit-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" xml:space="preserve"><path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z"/><path fill="none" d="M0,0h24v24H0V0z"/></svg>');
+            background-position: center right;
+            background-repeat: no-repeat;
+            @apply px-6 py-4 pr-8;
+        }
+
+    }
+
+    .gsection {
+        border-bottom: none!important;
+        @apply mt-8;
+
+        h3 {
+            font-weight: bold;
+            @apply text-2xl text-primary;
+        }
+    }
+
+}
+
+.gform_footer {
+    @apply mb-0 pb-0 text-center items-center;
+}
+
+.gform_button {
+    @apply btn mx-auto;
+}

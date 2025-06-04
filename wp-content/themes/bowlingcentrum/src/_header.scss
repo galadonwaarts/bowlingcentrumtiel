@@ -1,0 +1,108 @@
+
+header .menu-wrap > li {
+
+    &.menu-item {
+        a {
+            @apply text-xl uppercase leading-6 text-white hover:text-accent;
+        }
+
+        &.current-menu-item {
+            a {
+                @apply font-bold text-accent;
+            }
+        }
+    }
+    
+
+    &.menu-item-has-children > a {
+    
+    
+        &:hover {
+    
+        }
+    }
+    
+    .subarrow {
+        @apply inline-block ml-4 rotate-90;
+    }
+
+    &:hover {
+        .subarrow {
+            @apply -rotate-90;
+        }
+
+        ul {
+            @apply block;
+        }
+    }
+
+
+
+
+    &.menu-btn {
+        a {
+            @apply bg-secondary text-white px-6 py-3 font-bold hover:text-white hover:bg-accent;
+        }
+
+        &.current-menu-item {
+            a {
+                @apply bg-accent text-white;
+            }
+        }
+    }
+
+
+
+    ul {
+        @apply absolute z-10 hidden pt-1 pb-1 text-base bg-white shadow-lg min-w-56;
+
+        li {
+
+            &:hover {
+                @apply bg-neutral;
+
+                a {
+                    @apply bg-neutral;
+                }
+            }
+
+            a {
+                @apply block px-5 py-3 text-secondary;
+            }
+        }
+    }
+}
+
+/* Mobile menu */
+.mobile-menu {
+    .menu-wrap li {
+        @apply relative;
+
+        a {
+            @apply mx-0 block rounded-lg px-0 py-2 text-primary font-semibold leading-7 hover:text-secondary;
+        }
+
+        ul {
+            @apply hidden;
+
+            a {
+                @apply text-sm font-normal;
+            }
+        }
+
+        &.active {
+            .subarrow {
+                @apply transform rotate-180;
+            }
+
+            ul {
+                @apply block mb-3;
+            }
+        }
+    }
+
+    .subarrow {
+        @apply absolute top-0 right-0 cursor-pointer mt-3 text-primary;
+    }
+
+}

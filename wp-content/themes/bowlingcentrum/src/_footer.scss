@@ -1,0 +1,13 @@
+footer {
+    li {
+        @apply pb-4;
+
+        a {
+            @apply text-sm lg:text-base leading-6 text-primary hover:text-secondary pb-6;
+        }
+    }
+
+    .copyright a {
+        @apply text-white;
+    }
+}

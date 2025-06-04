@@ -1,0 +1,47 @@
+{
+  "name": "onwaarts",
+  "version": "1.0.0",
+  "context": "browser",
+  "scripts": {
+    "clean": "rm -r app/",
+    "start": "npm-run-all --parallel 'watch:*'",
+    "watch": "parcel watch src/app.js --no-hmr --dist-dir app/",
+    "build": "parcel build src/app.js  --no-autoinstall --no-source-maps --no-cache --detailed-report --dist-dir app/"
+  },
+  "plugins": {},
+  "devDependencies": {
+    "@parcel/transformer-css-experimental": "^2.3.2",
+    "@parcel/transformer-sass": "^2.15.2",
+    "daisyui": "^4.10.1",
+    "parcel": "^2.9.3",
+    "parcel-plugin-watch-reload": "^1.0.3",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
+  },
+  "watchreload": {
+    "files": [
+      "**/*.php",
+      "**/**/*.php",
+      "**/**/*.svg"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/pro-duotone-svg-icons": "^6.5.1",
+    "@fortawesome/pro-light-svg-icons": "^6.5.1",
+    "@fortawesome/pro-regular-svg-icons": "^6.5.1",
+    "@fortawesome/pro-solid-svg-icons": "^6.5.1",
+    "@fortawesome/pro-thin-svg-icons": "^6.5.1",
+    "@fortawesome/sharp-regular-svg-icons": "^6.5.2",
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "aos": "^2.3.4",
+    "jquery": "^3.7.1",
+    "slick-carousel": "^1.8.1",
+    "tailwind-container-break-out": "^2.0.9"
+  }
+}

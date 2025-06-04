@@ -1,0 +1,19 @@
+//@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+h1, .h1 {
+    @apply mb-5 text-4xl font-bold sm:text-5xl font-serif;
+}
+h2, .h2 {
+    @apply mb-5 text-white text-3xl font-bold sm:text-4xl font-serif;
+}
+h3, .h3 {
+    @apply mb-5 text-xl font-bold font-serif;
+}
+
+h4 {
+    @apply font-bold font-serif;
+}
+
+p {
+    @apply mb-8 text-base leading-7 text-neutral;
+}
