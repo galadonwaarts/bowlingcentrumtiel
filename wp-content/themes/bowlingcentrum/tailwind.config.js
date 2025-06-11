@@ -28,6 +28,10 @@ module.exports = {
             'fontcolor': '#434343',
             "neutral": "#70645C",
         },
+        boxShadow: {
+          'full': '0 1px 20px -1px #0000000d, 0 1px 20px 2px #0000000d',
+          'full-light': '0 0.5px 8px -0.5px #00000007, 0 0.5px 8px 1px #00000007'
+        }
     },
   },
   plugins: [

@@ -4,7 +4,7 @@ h1, .h1 {
     @apply mb-5 text-4xl font-bold sm:text-5xl font-serif;
 }
 h2, .h2 {
-    @apply mb-5 text-white text-3xl font-bold sm:text-4xl font-serif;
+    @apply mb-8 text-white text-3xl font-bold sm:text-4xl font-serif;
 }
 h3, .h3 {
     @apply mb-5 text-xl font-bold font-serif;
@@ -15,5 +15,5 @@ h4 {
 }
 
 p {
-    @apply mb-8 text-base leading-7 text-neutral;
+    @apply mb-8 text-base leading-7;
 }

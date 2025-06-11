@@ -410,7 +410,7 @@ add_action('login_enqueue_scripts', 'my_login_stylesheet');
 if (class_exists('ACF')) :
     function tt3child_register_acf_blocks()
     {
-        register_block_type(__DIR__ . '/assets/blocks/video');
+        register_block_type(__DIR__ . '/assets/blocks/acties');
     }
 
     // Here we call our tt3child_register_acf_block() function on init.

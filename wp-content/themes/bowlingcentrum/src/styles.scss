@@ -37,18 +37,21 @@ a {
 }
 
 .btn {
-    text-transform: none;
-    @apply font-serif border-2 text-white rounded-lg bg-primary border-primary px-4 py-2 h-auto min-h-0 text-base hover:bg-secondary hover:border-secondary hover:text-white;
+    @apply font-serif border-2 tracking-wide text-white text-lg rounded-lg bg-primary border-primary px-5 py-1.5 h-auto min-h-0;
 
-    &:after {
-        content: '\f054';
-        @apply font-fontawesome font-normal transition-all ease-in-out pl-1;
+    // &:after {
+    //     content: '\f054';
+    //     @apply font-fontawesome font-normal transition-all ease-in-out pl-1;
+    // }
+
+    &.accent-color {
+        @apply bg-accent border-accent;
     }
 
+
     &:hover {
-        &:after {
-            @apply pl-2;
-        }
+        @apply bg-primary border-primary text-white shadow-[0_0_0_0.2rem_rgba(2,170,239,0.5)];
+        
     }
 
     &.btn-outline {

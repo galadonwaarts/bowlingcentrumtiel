@@ -15,10 +15,10 @@
 
 
 </head>
-<body <?php body_class('bodyclass text-neutral selection:bg-secondary selection:text-white bg-white'); ?>>
+<body <?php body_class('bodyclass text-neutral selection:bg-primary selection:text-black bg-white'); ?>>
 
 
-<header class="group bg-transparent fixed w-full top-0 z-10 [&.scrolled]:drop-shadow-md transition-all ease-in-out transform">
+<header class="group bg-transparent fixed w-full top-0 z-50 shadow-md [&.scrolled]:drop-shadow-md [&.scrolled]:bg-black transition-all ease-in-out transform">
     <div class="container">
         <nav class="mx-auto flex items-center justify-between gap-x-6  transition-all ease-in-out group-[.scrolled]:py-2" aria-label="Global">
             <div class="flex lg:flex-1">

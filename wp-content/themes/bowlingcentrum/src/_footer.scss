@@ -7,7 +7,31 @@ footer {
         }
     }
 
-    .copyright a {
-        @apply text-white;
+    
+    
+
+  
+    .copyright {
+        a {
+            @apply text-secondary text-sm hover:underline;
+        }
+        p {
+            margin: 0px !important;
+        }
+    }
+
+    .block-title {
+        @apply text-lg font-serif text-[#5D5B54] font-bold;
+    }
+    .block-content {
+        @apply mt-3 lg:mt-6;
+
+        a {
+            @apply text-base leading-6 text-secondary font-sans font-normal hover:text-primary hover:underline;
+          }
+
+        p {
+            @apply mb-3 text-base font-sans font-normal leading-6 text-secondary;
+         }
     }
 }

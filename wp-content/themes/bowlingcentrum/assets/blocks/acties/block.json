@@ -1,0 +1,12 @@
+{
+  "name": "acf/acties",
+  "title": "Acties blok",
+  "description": "Video block",
+  "category": "custom",
+  "icon": "admin-comments",
+  "keywords": ["acties", "wide", "block"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "block.php"
+  }
+}

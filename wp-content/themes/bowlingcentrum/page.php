@@ -25,6 +25,11 @@
 
     </div>
 
+    <!-- USP -->
+    <?php include get_template_directory() . '/assets/usp.php'; ?>
+
+    <!-- CTA -->
+    <?php include get_template_directory() . '/assets/cta.php'; ?>
 </main>
 
 

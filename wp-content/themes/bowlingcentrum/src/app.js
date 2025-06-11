@@ -5,13 +5,19 @@ globalThis.jQuery = $;
 import './styles.scss';
 
 // FONT AWESOME
-// import { library, dom } from '@fortawesome/fontawesome-svg-core';
-// import faUser from '@fortawesome/pro-solid-svg-icons/faUser';
-// import faChevronDown from '@fortawesome/pro-regular-svg-icons/faChevronDown';
-// import faChevronRight from '@fortawesome/pro-regular-svg-icons/faChevronRight';
-//
-// library.add(faUser, faChevronDown, faChevronRight);
-// dom.watch();
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import {faUser} from '@fortawesome/pro-solid-svg-icons/faUser';
+import {faChevronDown} from '@fortawesome/pro-regular-svg-icons/faChevronDown';
+import {faChevronRight} from '@fortawesome/pro-regular-svg-icons/faChevronRight';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons/faLinkedinIn';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
+import { faCalendarDays } from '@fortawesome/pro-regular-svg-icons/faCalendarDays';
+import { faPerson } from '@fortawesome/pro-regular-svg-icons/faPerson';
+
+
+library.add(faUser, faChevronDown, faChevronRight, faInstagram, faFacebookF, faLinkedinIn, faCalendarDays, faPerson);
+dom.watch();
 
 // SLICK SLIDER
 // import 'slick-carousel';
@@ -19,8 +25,8 @@ import './styles.scss';
 
 
 // AOS
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 (function ($) {
@@ -94,13 +100,13 @@ import './styles.scss';
     });
 
 
-    // AOS.init({
-    //   duration: 400,
-    //   offset: 0, // offset (in px) from the original trigger point
-    //   once: true, // whether animation should happen only once - while scrolling down
-    //   anchorPlacement: 'top-bottom', // define where the AOS animations will be triggered
-    // });
-    // window.addEventListener('load', AOS.refresh);
+    AOS.init({
+      duration: 400,
+      offset: 0, // offset (in px) from the original trigger point
+      once: true, // whether animation should happen only once - while scrolling down
+      anchorPlacement: 'top-bottom', // define where the AOS animations will be triggered
+    });
+    window.addEventListener('load', AOS.refresh);
 
 
   });
