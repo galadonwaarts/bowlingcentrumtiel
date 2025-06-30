@@ -1,5 +1,15 @@
 <?php
 if (get_post_type() === 'arrangement') {
+    $display_type = get_field('arrangement_display_type');
+    
+    if ($display_type === 'price') {
+        $price_or_title = get_field('arrangement_price_from');
+        $price_suffix = get_field('arrangement_price_suffix');
+    } else if ($display_type === 'title') {
+        $price_or_title = get_field('arrangement_title'); 
+        $price_suffix = null;
+    }
+
     $image    = get_field('arrangement_img');
     $size     = 'medium'; // (thumbnail, medium, large, full of custom size)
     $alt_text = get_post_meta($image, '_wp_attachment_image_alt', true);
@@ -13,14 +23,14 @@ if (get_post_type() === 'arrangement') {
         </div>
         <div class="bg-white px-4 py-2.5 flex flex-col justify-between lg:w-[55%]">
             <div class="mb-2">
-                <span class="text-base text-accent mb-4">Vanaf</span>
+                <span class="text-base text-accent mb-4"><?php echo $display_type === 'price' ? 'Vanaf' : '&nbsp;'; ?></span>
                 <div class="flex items-center">
-                    <span class="text-[30px] font-bold text-accent">€8.50</span>
-                    <span class="text-sm text-accent ml-6">per persoon</span>
+                    <span class="text-[30px] font-bold text-accent"><?php echo $price_or_title; ?></span>
+                    <?php if($price_suffix): ?><span class="text-sm text-accent ml-6"><?php echo $price_suffix; ?></span><?php endif; ?>
                 </div>
             </div>
             <p class="text-fontcolor"><?php the_field('arrangement_description'); ?></p>
-            <span class="btn w-full uppercase block text-center">Meer info</span>
+            <span class="btn w-full uppercase block text-center"><?php _e('Meer info', 'bowlingcentrum'); ?></span>
         </div>
     </div>
 </a>

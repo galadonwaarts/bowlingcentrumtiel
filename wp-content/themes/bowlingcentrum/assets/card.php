@@ -1,13 +1,6 @@
-<?php
-if (get_post_type() === 'restaurant') {
-
-    $image    = get_field( 'restaurant_img' );
-    $size     = 'large'; // (thumbnail, medium, large, full or custom size)
-    $alt_text = get_post_meta( $image, '_wp_attachment_image_alt', true ); 
-?>
 <a href="<?php the_permalink(); ?>" class="block rounded-2xl overflow-hidden hover:shadow-accent hover:shadow-full-light hover:opacity-90 transition-opacity">
     <div>
-        <div class="relative  p-4 flex flex-col justify-end min-h-[200px] bg-cover bg-center h-full" style="background-image: url('<?php echo wp_get_attachment_image_url($image, $size); ?>');">
+        <div class="relative  p-4 flex flex-col justify-end min-h-[200px] h-full" style="background-image: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover; background-position: center;">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent rounded-t-2xl"></div>
             <span class="mb-2 text-white text-2xl font-bold relative z-10"><?php the_title(); ?></span>
             <div class="bg-accent h-1.5 w-1/2 relative z-10"></div>
@@ -17,6 +10,3 @@ if (get_post_type() === 'restaurant') {
         </div>
     </div>
 </a>
-<?php } else {
-    echo '<!-- This template should only be used within a restaurant post type -->';
-} ?>

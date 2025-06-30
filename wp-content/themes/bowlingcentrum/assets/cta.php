@@ -1,5 +1,5 @@
 <!-- CTA section -->
-<section class="bg-black">
+<section class="bg-bg-dark">
     <?php 
     $title = get_field('cta_title', 'option');
     $description = get_field('cta_description', 'option');
@@ -23,7 +23,7 @@
             <a class="btn w-full md:hidden" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 
             <div class="hidden md:block md:col-span-5 relative">
-                <div class="absolute left-[-20%] top-[30px] bg-black border-l-8 border-b-8 border-accent py-[30px] px-[15px]">
+                <div class="absolute left-[-20%] top-[30px] bg-bg-dark border-l-8 border-b-8 border-accent py-[30px] px-[15px]">
                     <h2 class="hidden md:block"><?php echo $title; ?></h2>
                     <p class="hidden md:block text-white"><?php echo $description; ?></p>
                     <a class="btn w-full" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>

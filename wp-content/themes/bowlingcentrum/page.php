@@ -6,8 +6,8 @@
     <!-- PAGE HEAD -->
     <?php include get_template_directory() . '/assets/page-head.php'; ?>
 
-
-    <div class="container py-10 xl:py-16 px-6 lg:px-8">
+<div class="bg-bg-dark">
+    <div class="container py-16 sm:py-24">
 
         <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
@@ -21,9 +21,8 @@
             <!-- /article -->
 
         <?php endwhile; endif; ?>
-
-
     </div>
+</div>
 
     <!-- USP -->
     <?php include get_template_directory() . '/assets/usp.php'; ?>

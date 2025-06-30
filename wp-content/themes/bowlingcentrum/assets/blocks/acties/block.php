@@ -11,9 +11,9 @@ if (is_admin()) {
 ?>
 
 </div>
-<section class="bg-black">
-    <div class="container py-16 sm:py-24">
-        <h2 class="text-center">Bekijk de arrangementen</h2>
+<section class="bg-bg-dark">
+    <div class="container ">
+        <h2 class="text-center"><?php _e('Bekijk de arrangementen', 'bowlingcentrum'); ?></h2>
         <div class="grid gap-14">
         <?php if( have_rows('promiotions_repeater') ): while( have_rows('promiotions_repeater') ) : the_row(); 
             $name = get_sub_field('name');
@@ -27,12 +27,12 @@ if (is_admin()) {
             $size     = 'large'; // (thumbnail, medium, large, full of custom size)
             $alt_text = get_post_meta( $image, '_wp_attachment_image_alt', true );
         ?>
-            <div class="grid grid-cols-1 md:grid-cols-12 max-md:max-w-md mx-auto">
-                <div class="col-span-full md:col-span-4 ">
-                    <img class="w-full object-cover" loading="lazy" alt="<?php echo $alt_text ?>" src="<?php echo wp_get_attachment_image_url( $image, $size ); ?>">
+            <div class="flex flex-col md:flex-row max-md:max-w-md md:max-w-7xl mx-auto">
+                <div class="col-span-full md:col-span-4 w-full md:w-4/12">
+                    <img class="w-full h-auto object-cover" loading="lazy" alt="<?php echo $alt_text ?>" src="<?php echo wp_get_attachment_image_url( $image, $size ); ?>">
                 </div>
-                <div class="bg-white col-span-full md:col-span-8 px-[15px] py-5">
-                    <div class="flex flex-col gap-4">
+                <div class="bg-white px-[15px] py-5 w-full md:w-8/12">
+                    <div class="flex flex-col gap-4 h-full">
                         <div>
                             <h3 class="text-accent text-[28px] font-bold"><?php echo $name; ?></h3>
                             <div class="bg-accent h-1.5 w-1/2 relative z-10"></div>
@@ -52,9 +52,9 @@ if (is_admin()) {
                             <p><?php echo $description; ?></p>
                         </div>
 
-                        <div class="flex flex-col md:flex-row md:justify-between">
+                        <div class="flex flex-col md:flex-row md:justify-between mt-auto">
                             <div class="mb-2">
-                                <span class="text-base text-accent mb-4">Vanaf</span>
+                                <span class="text-base text-accent mb-4"><?php _e('Vanaf', 'bowlingcentrum'); ?></span>
                                 <div class="flex items-center">
                                     <span class="text-[30px] font-bold text-accent">€<?php echo $price; ?></span>
                                     <span class="text-sm text-accent ml-6"><?php echo $price_addition; ?></span>

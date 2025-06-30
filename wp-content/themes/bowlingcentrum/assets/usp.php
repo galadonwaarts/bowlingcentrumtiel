@@ -1,5 +1,5 @@
-<section class="bg-black">
-    <div class="container py-16 sm:py-24">
+<section class="bg-bg-dark">
+    <div class="container py-8">
         <div class="grid grid-cols-2 md:grid-cols-4">
             <?php if( have_rows('usp', 'option') ): while( have_rows('usp', 'option') ) : the_row(); ?>
                 <div class="p-8 text-center flex flex-col items-center justify-center gap-8">

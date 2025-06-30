@@ -14,9 +14,15 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
 import { faCalendarDays } from '@fortawesome/pro-regular-svg-icons/faCalendarDays';
 import { faPerson } from '@fortawesome/pro-regular-svg-icons/faPerson';
+import {faLocationDot} from '@fortawesome/pro-solid-svg-icons/faLocationDot';
+import {faEnvelope} from '@fortawesome/pro-solid-svg-icons/faEnvelope';
+import {faPhone} from '@fortawesome/pro-solid-svg-icons/faPhone';
+import { faBars} from '@fortawesome/pro-regular-svg-icons/faBars';
+import { faXmark} from '@fortawesome/pro-regular-svg-icons/faXmark';
+import { faBowlingBall} from '@fortawesome/pro-solid-svg-icons/faBowlingBall';
 
 
-library.add(faUser, faChevronDown, faChevronRight, faInstagram, faFacebookF, faLinkedinIn, faCalendarDays, faPerson);
+library.add(faUser, faChevronDown, faChevronRight, faInstagram, faFacebookF, faLinkedinIn, faCalendarDays, faPerson, faLocationDot, faEnvelope, faPhone, faBars, faXmark, faBowlingBall);
 dom.watch();
 
 // SLICK SLIDER
@@ -57,18 +63,34 @@ import 'aos/dist/aos.css';
       if ($('.mobile-menu').hasClass('active')) {
         $('.mobile-menu, .page-overlay').removeClass('active');
         $('body').removeClass('overflow-hidden');
+
+        // Toon hamburger menu en verberg sluit-knop
+        $('.open').removeClass('hidden');
+        $('.close').addClass('hidden');
       } else {
         $('.mobile-menu, .page-overlay').addClass('active');
         $('body').addClass('overflow-hidden');
+
+        // Verberg hamburger menu en toon sluit-knop
+        $('.open').addClass('hidden');
+        $('.close').removeClass('hidden');
       }
     });
     $('.page-overlay').on('click', function () {
       $('.mobile-menu, .page-overlay').removeClass('active');
       $('body').removeClass('overflow-hidden');
+
+      // Reset naar originele state (hamburger menu zichtbaar)
+      $('.open').removeClass('hidden');
+      $('.close').addClass('hidden');
     });
 
     $('.mobile-menu ul li a, .header .logo').on('click', function () {
       $('body').removeClass('overflow-hidden');
+
+      // Reset naar originele state (hamburger menu zichtbaar)
+      $('.open').removeClass('hidden');
+      $('.close').addClass('hidden');
     });
 
     // Close mobile menu on click

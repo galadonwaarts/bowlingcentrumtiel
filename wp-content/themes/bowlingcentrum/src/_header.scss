@@ -75,11 +75,24 @@ header .menu-wrap > li {
 
 /* Mobile menu */
 .mobile-menu {
+    @apply transition-all ease-in-out duration-300 pt-[112px] sm:pt-[156px];
+    
     .menu-wrap li {
         @apply relative;
 
         a {
-            @apply mx-0 block rounded-lg px-0 py-2 text-primary font-semibold leading-7 hover:text-secondary;
+            @apply mx-0 text-base block rounded-lg px-0 py-1 text-white font-semibold leading-7;
+            
+            &:hover {
+                @apply text-accent underline underline-offset-4;
+            }
+        
+        }
+
+        &.current-menu-item {
+            a {
+                @apply text-accent font-bold underline underline-offset-4;
+            }
         }
 
         ul {

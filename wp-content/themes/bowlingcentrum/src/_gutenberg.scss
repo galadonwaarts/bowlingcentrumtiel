@@ -3,6 +3,47 @@
 /* ==================================== */
 .gutenberg {
 
+    //&.single-restaurant {
+        .wp-block-columns {
+            @apply grid grid-cols-1 md:grid-cols-12 gap-y-20 ;
+
+            > :first-child {
+                @apply col-span-full md:col-span-7 ;
+            }
+
+            > :nth-child(2),
+            > :last-child {
+                @apply col-span-full md:col-start-9 md:col-span-4;
+            }
+
+            .wp-block-heading {
+                @apply uppercase text-white;
+            }
+            p {
+                color: #fff;
+            }
+
+            // Styling a table / 
+            .wp-block-table {
+                table {
+                    @apply w-full text-white;
+    
+                    tbody tr {
+                        @apply border-b border-white;
+    
+                        td {
+                            @apply border-none py-2 sm:py-4;
+    
+                            &:last-child {
+                                @apply text-right;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    //}
+
     .wp-block-image, .wp-block-embed {
         @apply overflow-hidden my-10;
         /* @apply overflow-hidden my-10 xl:ml-[-100px] xl:mr-[-100px]; */
@@ -15,6 +56,8 @@
     .widget_media_image .wp-block-image {
         @apply mt-0;
     }
+
+
 
 
     /* BLOCKQUOTE */
@@ -32,6 +75,11 @@
         cite {
             @apply block text-sm text-gray-600 mt-0 py-3;
         }
+    }
+
+    // Button
+    .wp-block-button .wp-block-button__link{
+        @apply btn;
     }
 
 
@@ -63,18 +111,27 @@
             @apply pl-0 xl:pl-0 lg:pr-10 xl:pr-14;
         }
     }
+
+    .wp-block-gallery {
+        @apply grid grid-cols-2 md:grid-cols-4 !gap-8;
+
+        .wp-block-image {
+            @apply rounded-2xl overflow-hidden !w-full aspect-square;
+        }
+    }
     
 }
+
 
 
 // GRAVITY FORMS
 // ====================================
 .gform_heading {
-    @apply text-2xl font-bold text-primary mb-5 text-center;
+    @apply text-2xl font-bold text-white mb-5 text-center;
 }
 
 .gform_body {
-    @apply text-base leading-7 text-primary bg-white rounded-2xl p-8;
+    @apply text-base leading-7 text-white ;
 
 
 
@@ -82,10 +139,10 @@
         @apply mb-5;
 
         .ginput_container {
-            @apply mb-5;
+            @apply mb-3;
 
             label {
-                @apply block text-sm text-primary mb-2;
+                @apply block text-sm text-white;
             }
 
         }
@@ -95,11 +152,11 @@
         }
 
         :where(input[type=text], input[type=email], input[type=tel], input[type=url], input[type=number], input[type=password], textarea) {
-            @apply block w-full border border-gray-200 rounded-md px-6 py-4 text-base text-primary leading-6 focus:outline-none focus:border-primary;
+            @apply block w-full border border-gray-200 rounded-md px-6 py-4 text-base text-white leading-6 focus:outline-none focus:border-primary;
         }
 
         input[type=checkbox], input[type=radio] {
-            @apply inline-block border border-gray-200 rounded-lg px-3 py-2 text-base text-primary leading-6 focus:outline-none focus:border-primary accent-primary;
+            @apply inline-block border border-gray-200 rounded-lg px-3 py-2 text-base text-white leading-6 focus:outline-none focus:border-primary accent-primary;
         }
 
         input[type=checkbox] {
@@ -113,6 +170,10 @@
             background-position: center right;
             background-repeat: no-repeat;
             @apply px-6 py-4 pr-8;
+        }
+
+        .ginput_container_consent {
+            @apply flex;
         }
 
     }
@@ -134,5 +195,7 @@
 }
 
 .gform_button {
-    @apply btn mx-auto;
+    @extend .btn;
+    @extend .accent-color;
+    @apply uppercase;
 }

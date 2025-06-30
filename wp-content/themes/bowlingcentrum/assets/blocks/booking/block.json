@@ -1,0 +1,12 @@
+{
+  "name": "acf/booking-sidebar-block",
+  "title": "Reservering sidebar",
+  "description": "Dit is een sidebar met o.a. een reserveerknop en openingstijden",
+  "category": "custom",
+  "icon": "admin-comments",
+  "keywords": ["sidebar", "reservering", "block"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "block.php"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "acf/photo-albums",
+  "title": "Foto albums",
+  "description": "Dit is een blok voor links foto albums",
+  "category": "custom",
+  "icon": "admin-comments",
+  "keywords": ["foto", "album", "block"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "block.php"
+  }
+}

@@ -37,7 +37,7 @@ a {
 }
 
 .btn {
-    @apply font-serif border-2 tracking-wide text-white text-lg rounded-lg bg-primary border-primary px-5 py-1.5 h-auto min-h-0;
+    @apply font-serif border-2 tracking-wide text-white text-lg rounded-lg bg-primary border-primary px-5 py-1.5 h-auto min-h-0 cursor-pointer;
 
     // &:after {
     //     content: '\f054';
@@ -73,6 +73,12 @@ a {
         }
     }
 
+}
+
+.style-paragraph {
+    p {
+        @apply text-white;
+    }
 }
 
 

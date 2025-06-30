@@ -12,15 +12,15 @@ if (is_post_type_archive('restaurant')) {
 $size = 'head-size';
 ?>
 
-<div class="relative isolate overflow-hidden bg-gray-900 pt-48 pb-20 sm:pt-80 sm:pb-40">
+<div class="relative isolate overflow-hidden bg-bg-dark pt-48 pb-20 sm:pt-80 sm:pb-40">
 
     <img src="<?php echo wp_get_attachment_image_url($image, $size); ?>" class="absolute inset-0 -z-10 h-full w-full object-cover object-center opacity-50">
 
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-transparent to-black/70"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-bg-dark via-transparent to-bg-dark"></div>
 
     <div class="mx-auto max-w-7xl px-6 lg:px-8 h-full grid items-center">
         <div class="mx-auto lg:mx-0">
-            <h2 class="max-lg:text-center text-4xl lg:text-[70px] lg:leading-[90px] uppercase text-white font-bold">
+            <h2 class="max-lg:text-center text-3xl lg:text-[70px] lg:leading-[90px] uppercase text-white font-bold">
                 <?php echo $title; ?>
             </h2>
         </div>

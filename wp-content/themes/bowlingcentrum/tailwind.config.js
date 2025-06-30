@@ -26,6 +26,7 @@ module.exports = {
             "secondary": "#FFF7EA",
             "accent": "#FF4E00",
             'fontcolor': '#434343',
+            'bg-dark': '#181818',
             "neutral": "#70645C",
         },
         boxShadow: {

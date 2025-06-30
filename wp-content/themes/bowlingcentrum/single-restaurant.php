@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-<main role="main" id="page" class="gutenberg">
+<main role="main" id="page" class="gutenberg single-restaurant">
 
     <!--   PAGE HEAD  -->
     <?php include get_template_directory() . '/assets/page-head.php'; ?>
@@ -36,6 +36,9 @@
 
     </div>
 </section>
+
+<!-- USP -->
+ <?php include get_template_directory() . '/assets/usp.php'; ?>
 
 </main>
 

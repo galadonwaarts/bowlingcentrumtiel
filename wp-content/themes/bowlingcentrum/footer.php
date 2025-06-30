@@ -1,6 +1,6 @@
 <footer>
-    <div class="bg-[#E9E5DF]">
-        <div class="container pt-16 pb-24">
+    <div class="bg-bg-dark  shadow-xl">
+        <div class="container pt-16 pb-12">
             <div class="flex flex-col lg:flex-row justify-between ">
                 <!-- Logo -->
                 <div class="">
@@ -88,19 +88,20 @@
             </div>
 
         </div>
-    </div>
-
-    <!-- Copyright -->
-    <div class="bg-accent">
-        <div class="container flex items-center max-lg:flex-col gap-y-4 gap-x-8 lg:justify-end py-6">
-            <div class="copyright text-center leading-normal text-sm">
-                <?php the_field('copyright_footer', 'option'); ?>
+        <!-- Copyright -->
+        <div class="bg-primary">
+            <div class="container flex items-center max-lg:flex-col gap-y-4 gap-x-8 lg:justify-end py-4">
+                <div class="copyright text-center leading-normal text-sm">
+                    <?php the_field('copyright_footer', 'option'); ?>
+                </div>
+                <a href="https://www.onwaarts.nl" class="inline-block" target="_blank">
+                    <img style="max-width: 100px; vertical-align: middle;" src="https://onwaarts.nl/logincss/onwaarts.svg" alt="onwaarts">
+                </a>
             </div>
-            <a href="https://www.onwaarts.nl" class="inline-block" target="_blank">
-                <img style="max-width: 100px; vertical-align: middle;" src="https://onwaarts.nl/logincss/onwaarts.svg" alt="onwaarts">
-            </a>
         </div>
     </div>
+    
+
 
 </footer>
 <?php wp_footer(); ?>

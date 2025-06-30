@@ -411,6 +411,8 @@ if (class_exists('ACF')) :
     function tt3child_register_acf_blocks()
     {
         register_block_type(__DIR__ . '/assets/blocks/acties');
+        register_block_type(__DIR__ . '/assets/blocks/photos');
+        register_block_type(__DIR__ . '/assets/blocks/booking');
     }
 
     // Here we call our tt3child_register_acf_block() function on init.

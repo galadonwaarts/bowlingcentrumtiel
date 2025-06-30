@@ -1,7 +1,7 @@
 {
   "name": "acf/acties",
   "title": "Acties blok",
-  "description": "Video block",
+  "description": "Acties blok",
   "category": "custom",
   "icon": "admin-comments",
   "keywords": ["acties", "wide", "block"],
