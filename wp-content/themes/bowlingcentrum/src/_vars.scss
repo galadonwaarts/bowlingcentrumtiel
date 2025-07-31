@@ -1,10 +1,23 @@
 //@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://p.typekit.net/p.css?s=1&k=qtt2cne&ht=tk&f=10887&a=8111995&app=typekit&e=css");
+
+@font-face {
+font-family:"futura-pt";
+src: url("https://use.typekit.net/af/03fe6a/000000000000000077586b5b/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") 
+format("woff2"),url("https://use.typekit.net/af/03fe6a/000000000000000077586b5b/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") 
+format("woff"),url("https://use.typekit.net/af/03fe6a/000000000000000077586b5b/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") 
+format("opentype");
+font-display:auto;
+font-style:normal;
+font-weight:800;
+font-stretch:normal;
+}
 
 h1, .h1 {
-    @apply mb-5 text-4xl font-bold sm:text-5xl font-serif;
+    @apply mb-5 uppercase text-4xl font-bold sm:text-5xl font-serif;
 }
 h2, .h2 {
-    @apply mb-8 text-white text-3xl font-bold sm:text-4xl font-serif;
+    @apply mb-8 uppercase text-white text-3xl font-bold sm:text-4xl font-serif;
 }
 h3, .h3 {
     @apply mb-5 text-xl font-bold font-serif;

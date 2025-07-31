@@ -15,7 +15,7 @@ module.exports = {
     },
     fontFamily: {
       'sans': ['Montserrat', 'sans-serif'],
-      'serif': ['Montserrat', 'sans-serif'],
+      'serif': ['futura-pt', 'cursive'],
       //'serif': ['Londrina Solid', 'cursive'],
       'mono': ['ui-monospace', 'SFMono-Regular'],
       'fontawesome': ['\'Font Awesome 6 Pro\''],
