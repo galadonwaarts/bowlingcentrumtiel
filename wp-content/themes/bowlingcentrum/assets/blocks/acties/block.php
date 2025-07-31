@@ -34,7 +34,7 @@ if (is_admin()) {
                 <div class="bg-white px-[15px] py-5 w-full md:w-8/12">
                     <div class="flex flex-col gap-4 h-full">
                         <div>
-                            <h3 class="text-accent text-[28px] font-bold"><?php echo $name; ?></h3>
+                            <h3 class="text-primary text-[28px] font-bold"><?php echo $name; ?></h3>
                             <div class="bg-accent h-1.5 w-1/2 relative z-10"></div>
                         </div>
 
@@ -54,10 +54,10 @@ if (is_admin()) {
 
                         <div class="flex flex-col md:flex-row md:justify-between mt-auto">
                             <div class="mb-2">
-                                <span class="text-base text-accent mb-4"><?php _e('Vanaf', 'bowlingcentrum'); ?></span>
+                                <span class="text-base text-primary mb-4"><?php _e('Vanaf', 'bowlingcentrum'); ?></span>
                                 <div class="flex items-center">
-                                    <span class="text-[30px] font-bold text-accent">€<?php echo $price; ?></span>
-                                    <span class="text-sm text-accent ml-6"><?php echo $price_addition; ?></span>
+                                    <span class="text-[30px] font-bold text-primary">€<?php echo $price; ?></span>
+                                    <span class="text-sm text-primary ml-6"><?php echo $price_addition; ?></span>
                                 </div>
                             </div>
                             <div class="md:justify-end">

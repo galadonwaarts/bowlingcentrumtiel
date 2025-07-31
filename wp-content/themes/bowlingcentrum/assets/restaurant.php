@@ -5,7 +5,7 @@ if (get_post_type() === 'restaurant') {
     $size     = 'large'; // (thumbnail, medium, large, full or custom size)
     $alt_text = get_post_meta( $image, '_wp_attachment_image_alt', true ); 
 ?>
-<a href="<?php the_permalink(); ?>" class="block rounded-2xl overflow-hidden hover:shadow-accent hover:shadow-full-light hover:opacity-90 transition-opacity">
+<a href="<?php the_permalink(); ?>" class="block rounded-2xl overflow-hidden hover:shadow-primary hover:shadow-full-light">
     <div>
         <div class="relative  p-4 flex flex-col justify-end min-h-[200px] bg-cover bg-center h-full" style="background-image: url('<?php echo wp_get_attachment_image_url($image, $size); ?>');">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent rounded-t-2xl"></div>

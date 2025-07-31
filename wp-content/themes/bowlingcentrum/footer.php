@@ -49,7 +49,7 @@
             </div>
 
             <!-- Socials -->
-            <div class="flex lg:justify-end gap-x-3 leading-none">
+            <div class="flex gap-x-3 leading-none">
                 <?php if (get_field('g_facebook', 'option')): ?>
                     <a href="<?php the_field('g_facebook', 'option'); ?>">
                         <div class="w-auto">
