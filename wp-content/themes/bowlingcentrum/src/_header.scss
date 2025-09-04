@@ -3,7 +3,7 @@ header .menu-wrap > li {
 
     &.menu-item {
         a {
-            @apply text-xl uppercase leading-6 text-white hover:text-accent;
+            @apply text-xl uppercase leading-6 text-white hover:text-accent font-serif tracking-wider;
         }
 
         &.current-menu-item {
@@ -81,7 +81,7 @@ header .menu-wrap > li {
         @apply relative;
 
         a {
-            @apply mx-0 text-base block rounded-lg px-0 py-1 text-white font-semibold leading-7;
+            @apply mx-0 uppercase text-base block rounded-lg px-0 py-1 text-white font-semibold font-serif tracking-wider leading-7;
             
             &:hover {
                 @apply text-accent underline underline-offset-4;
