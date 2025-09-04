@@ -3,6 +3,20 @@
 /* ==================================== */
 .gutenberg {
 
+    .wp-block-heading {
+        @apply uppercase text-white;
+    }
+    p {
+        color: #fff;
+    }
+
+    .wp-block-list {
+        @apply text-white mb-7 -mt-5 pl-5;
+        li {
+            @apply text-white list-disc list-inside;
+        }
+    }
+
     //&.single-restaurant {
         .wp-block-columns {
             @apply grid grid-cols-1 md:grid-cols-12 gap-y-20 ;
@@ -14,13 +28,6 @@
             > :nth-child(2),
             > :last-child {
                 @apply col-span-full md:col-start-9 md:col-span-4;
-            }
-
-            .wp-block-heading {
-                @apply uppercase text-white;
-            }
-            p {
-                color: #fff;
             }
 
             // Styling a table / 
