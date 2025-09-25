@@ -12,23 +12,38 @@ get_header(); ?>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <?php $new_loop = new WP_Query(array(
-                'post_type' => 'arrangement',
-                'posts_per_page' => 4, // aantal posts dat je wilt tonen
-                'post_parent' => 0, // Only get top-level posts (no children)
-                'orderby' => 'menu_order',
-                'order' => 'ASC'
-            ));
-            ?>
-            <?php if ($new_loop->have_posts()) : ?>
-                <?php while ($new_loop->have_posts()) : $new_loop->the_post(); ?>
-                    <?php include get_template_directory() . '/assets/arrangement.php'; ?>
-            <?php endwhile;
-            endif; ?>
-            <?php wp_reset_query(); ?>
+            <?php
+            $arrangementen_selection = get_field('arrangementen_selection');
 
+            if ($arrangementen_selection) {
+                foreach ($arrangementen_selection as $arrangement) {
+                    $post = is_object($arrangement) ? $arrangement : get_post($arrangement);
+                    setup_postdata($post);
+
+                    include get_template_directory() . '/assets/arrangement.php';
+                }
+                wp_reset_postdata();
+            } else {
+                // Fallback: toon alle parent-arrangementen op menu_order
+                $q = new WP_Query([
+                    'post_type'      => 'arrangement',
+                    'post_parent'    => 0,
+                    'posts_per_page' => -1,
+                    'orderby'        => 'menu_order',
+                    'order'          => 'ASC',
+                    'post_status'    => 'publish',
+                ]);
+
+                while ($q->have_posts()) {
+                    $q->the_post();
+
+                    include get_template_directory() . '/assets/arrangement.php';
+                }
+                wp_reset_postdata();
+                wp_reset_query();
+            }
+            ?>
         </div>
-        <a href="<?php echo home_url('/arrangementen'); ?>" class="btn mt-10 mx-auto  uppercase w-full md:w-fit">Zie meer arrangementen</a>
     </div>
 </section>
 
@@ -60,7 +75,6 @@ if( $link ):
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <?php $new_loop = new WP_Query(array(
                 'post_type' => 'restaurant',
-                'posts_per_page' => 4 // aantal posts dat je wilt tonen
             ));
             ?>
             <?php if ($new_loop->have_posts()) : ?>
@@ -71,7 +85,6 @@ if( $link ):
             <?php wp_reset_query(); ?>
         </div>
 
-        <a href="<?php echo home_url('/restaurant'); ?>" class="mx-auto mt-10 btn w-fit uppercase"><?php _e('Zie meer restaurant opties', 'bowlingcentrum'); ?></a>
 
     </div>
 

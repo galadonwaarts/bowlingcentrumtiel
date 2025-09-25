@@ -167,6 +167,24 @@ function onwaartswp_custom_post($length)
     return 40;
 }
 
+// Alleen parent items (post_parent = 0) tonen in het ACF Relationship veld 'arrangementen_selection'
+// en op beheer-volgorde (menu_order ASC) sorteren.
+add_filter('acf/fields/relationship/query/key=field_68d4f92a7aa9d', function ($args, $field, $post_id) {
+    
+    // Beperk tot jouw CPT
+    $args['post_type'] = ['arrangement'];
+    // Alleen hoofditems
+    $args['post_parent'] = 0;
+    // Netjes sorteren op de ingestelde volgorde
+    $args['orderby'] = 'menu_order';
+    $args['order']   = 'ASC';
+    // Kleine optimalisaties
+    $args['post_status']     = 'publish';
+    $args['posts_per_page']  = 200;
+    $args['no_found_rows']   = true;
+    return $args;
+}, 10, 3);
+
 // Create the Custom Excerpts callback
 function onwaartswp_excerpt($length_callback = '', $more_callback = '')
 {
