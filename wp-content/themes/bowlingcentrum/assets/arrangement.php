@@ -23,10 +23,10 @@ if (get_post_type() === 'arrangement') {
         </div>
         <div class="bg-white px-4 py-2.5 flex flex-col justify-between lg:w-[55%]">
             <div class="mb-2">
-                <span class="text-base text-primary mb-4"><?php echo $display_type === 'price' ? 'Vanaf' : '&nbsp;'; ?></span>
-                <div class="flex items-center">
-                    <span class="text-[30px] font-bold text-primary"><?php echo $price_or_title; ?></span>
-                    <?php if($price_suffix): ?><span class="text-sm text-primary ml-6"><?php echo $price_suffix; ?></span><?php endif; ?>
+                <span class="text-base text-accent mb-4"><?php echo $display_type === 'price' ? 'Vanaf' : '&nbsp;'; ?></span>
+                <div class="flex items-center text-accent">
+                    <span class="text-[30px] font-bold "><?php echo $price_or_title; ?></span>
+                    <?php if($price_suffix): ?><span class="text-sm ml-6"><?php echo $price_suffix; ?></span><?php endif; ?>
                 </div>
             </div>
             <p class="text-fontcolor"><?php the_field('arrangement_description'); ?></p>
