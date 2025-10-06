@@ -95,6 +95,14 @@ if( $link ):
 <!-- USP (Unique selling points) section -->
 <?php include get_template_directory() . '/assets/usp.php'; ?>
 
+<!-- Instagram feed section -->
+<section class=" bg-bg-dark py-16 sm:py-28">
+    <div class="container">
+        <h2 class="text-center font-normal sm:mb-20"><?php _e('Kom gezellig langs!', 'bowlingcentrum'); ?></h2>
+        <?php echo do_shortcode('[instagram-feed feed=1]'); ?>
+    </div>
+</section>
+
 <!-- CTA section -->
 <?php include get_template_directory() . '/assets/cta.php'; ?>
 
