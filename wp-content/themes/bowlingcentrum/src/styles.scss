@@ -50,7 +50,7 @@ a {
 
 
     &:hover {
-        @apply bg-primary border-primary text-white shadow-[0_0_0_0.2rem_rgba(232,153,71,0.5)];
+        @apply bg-primary border-primary text-white shadow-[0_0_0_0.2rem_rgba(2,170,239,0.5)];
         
     }
 
@@ -140,5 +140,18 @@ a {
                 content: none;
             }
         }
+    }
+}
+
+// INSTAGRAM FEED IMAGES
+.sbi {
+    img {
+        @apply rounded-[20px] hover:scale-95 transition-transform duration-300;
+    }
+
+    // button
+    .sbi_follow_btn a{
+        @apply  bg-primary text-white px-5 py-1.5 uppercase w-full md:w-fit mt-5 !important;
+       
     }
 }
