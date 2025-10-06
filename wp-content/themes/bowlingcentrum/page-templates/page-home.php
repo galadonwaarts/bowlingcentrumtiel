@@ -96,12 +96,14 @@ if( $link ):
 <?php include get_template_directory() . '/assets/usp.php'; ?>
 
 <!-- Instagram feed section -->
+<?php if (shortcode_exists('instagram-feed')) : ?>
 <section class=" bg-bg-dark py-16 sm:py-28">
     <div class="container">
         <h2 class="text-center font-normal sm:mb-20"><?php _e('Kom gezellig langs!', 'bowlingcentrum'); ?></h2>
         <?php echo do_shortcode('[instagram-feed feed=1]'); ?>
     </div>
 </section>
+<?php endif; ?>
 
 <!-- CTA section -->
 <?php include get_template_directory() . '/assets/cta.php'; ?>
