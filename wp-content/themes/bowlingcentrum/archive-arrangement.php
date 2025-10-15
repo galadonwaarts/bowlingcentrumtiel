@@ -9,6 +9,7 @@
             <?php 
             $new_loop = new WP_Query(array(
                 'post_type' => 'arrangement',
+                'posts_per_page' => -1, // Show all posts
                 'post_parent' => 0, // Only get top-level posts (no children)
                 'orderby' => 'menu_order',
                 'order' => 'ASC'
