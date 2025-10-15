@@ -44,7 +44,12 @@ if (is_admin()) {
                 <a href="tel:<?php the_field('g_phone', 'option'); ?>" class="btn uppercase w-full">Bel <?php the_field('g_phone', 'option'); ?></a>
             <?php endif; ?>
             <?php if (!is_page('reserveren')) : ?>
-                <a href="/reserveren?title=<?php echo basename(get_permalink()); ?>" 
+                <?php 
+                $label = get_field('gf_selected_label');
+                $reserveren_url = home_url('/reserveren/');
+                $link = add_query_arg(['arrangement_label' => urlencode($label)], $reserveren_url);
+                ?>
+                <a href="<?php echo esc_url($link); ?>" 
                 class="btn accent-color uppercase w-full"><?php _e('Online reserveren', 'bowlingcentrum'); ?></a>
             <?php endif; ?>
         </div>

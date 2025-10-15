@@ -479,3 +479,114 @@ add_filter('upload_mimes', 'cc_mime_types');
 
 // Remove updated cart notification
 add_filter('woocommerce_add_message', '__return_false');
+
+
+
+
+// === GRAVITY FORMS INSTELLINGEN VOOR ARRENGEMENT DROPDOWN FIELD ===
+const BC_GF_FORM_ID  = 1;  // <-- jouw Form ID
+const BC_GF_FIELD_ID = 16; // <-- jouw Drop Down Field ID
+const BC_GF_PARAM    = 'arrangement_label'; // query param voor preselect
+
+/**
+ * Haal alle reserveringslabels uit Gutenberg-blocks (attrs.data.gf_selected_label)
+ * van gepubliceerde arrangementen.
+ */
+function bc_get_reservation_labels_from_blocks() {
+    $q = new WP_Query([
+        'post_type'      => 'arrangement',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
+        'no_found_rows'  => true,
+        'fields'         => 'ids',
+    ]);
+
+    $labels = [];
+    $seen   = [];
+
+    foreach ($q->posts as $post_id) {
+        $content = get_post_field('post_content', $post_id);
+        if ($content === '') continue;
+
+        $blocks = parse_blocks($content);
+        if (empty($blocks)) continue;
+
+        // Zoek recursief naar het eerste niet-lege gf_selected_label in de blocks
+        $stack = $blocks;
+        while (!empty($stack)) {
+            $b = array_shift($stack);
+
+            // Als je later je blocknaam weet, kun je hier filteren:
+            // if (!empty($b['blockName']) && $b['blockName'] !== 'acf/jouw-blocknaam') { /* doorgaan */ }
+
+            if (!empty($b['attrs']['data']['gf_selected_label'])) {
+                $label = trim((string)$b['attrs']['data']['gf_selected_label']);
+                if ($label !== '') {
+                    $key = mb_strtolower($label);
+                    if (!isset($seen[$key])) {
+                        $labels[]   = ['text' => $label, 'value' => $label];
+                        $seen[$key] = true;
+                    }
+                    // Belangrijk: NIET breaken → één post kan meerdere blocks/labels hebben.
+                }
+            }
+
+            if (!empty($b['innerBlocks'])) {
+                // dieper zoeken
+                foreach ($b['innerBlocks'] as $ib) {
+                    $stack[] = $ib;
+                }
+            }
+        }
+    }
+
+    return $labels;
+}
+
+/** Gravity Forms: dropdown vullen + preselecteren op ?arrangement_label= */
+add_filter('gform_pre_render_'            . BC_GF_FORM_ID, 'bc_gf_populate_arrangements_from_blocks');
+add_filter('gform_pre_validation_'        . BC_GF_FORM_ID, 'bc_gf_populate_arrangements_from_blocks');
+add_filter('gform_pre_submission_filter_' . BC_GF_FORM_ID, 'bc_gf_populate_arrangements_from_blocks');
+add_filter('gform_admin_pre_render_'      . BC_GF_FORM_ID, 'bc_gf_populate_arrangements_from_blocks');
+
+function bc_gf_populate_arrangements_from_blocks($form) {
+    $incoming = isset($_GET[BC_GF_PARAM]) ? sanitize_text_field(wp_unslash($_GET[BC_GF_PARAM])) : '';
+    $dynamic  = bc_get_reservation_labels_from_blocks();
+
+    foreach ($form['fields'] as &$field) {
+        if ((int)$field->id !== BC_GF_FIELD_ID || $field->type !== 'select') continue;
+
+        // Als je in GF zelf GEEN placeholder hebt ingevuld:
+        $choices = $dynamic;
+        array_unshift($choices, ['text' => 'Maak een keuze…', 'value' => '']);
+
+        // Zet choices en default
+        $field->choices      = $choices;
+        $field->defaultValue = ''; // standaard niets geselecteerd
+
+        // Preselect via querystring (case-insensitive op label)
+        if ($incoming !== '') {
+            foreach ($choices as $c) {
+                if ($c['value'] !== '' && strcasecmp($c['text'], $incoming) === 0) {
+                    $field->defaultValue = $c['value'];
+                    break;
+                }
+            }
+        }
+        break;
+    }
+
+    // --- Debug (tijdelijk inschakelen): /reserveren/?gf_debug=1
+    if (isset($_GET['gf_debug'])) {
+        header('Content-Type: text/plain; charset=utf-8');
+        echo "FORM HITS OK\n";
+        echo "Incoming: ".$incoming."\n";
+        echo "Choices count: ".count($dynamic)."\n\n";
+        print_r($dynamic);
+        exit;
+    }
+
+    return $form;
+}
