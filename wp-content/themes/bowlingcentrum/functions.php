@@ -185,6 +185,30 @@ add_filter('acf/fields/relationship/query/key=field_68d4f92a7aa9d', function ($a
     return $args;
 }, 10, 3);
 
+
+
+// Verberg 'Gebruik de editor' (field name: use_editor) op child-arrangementen
+add_filter('acf/prepare_field/name=use_editor', function ($field) {
+    if (is_admin()) {
+        // Huidig post ID bepalen (werkt bij zowel bewerken als quick save)
+        $post_id = 0;
+        if (!empty($_GET['post'])) {
+            $post_id = (int) $_GET['post'];
+        } elseif (!empty($_POST['post_ID'])) {
+            $post_id = (int) $_POST['post_ID'];
+        }
+
+        // Alleen voor ons CPT
+        if ($post_id && get_post_type($post_id) === 'arrangement') {
+            // Heeft dit bericht een parent? Dan is het een child -> verbergen
+            if (wp_get_post_parent_id($post_id)) {
+                return false; // verbergt het veld in de editor
+            }
+        }
+    }
+    return $field; // tonen (op hoofd-arrangement of bij nieuw item zonder parent)
+});
+
 // Create the Custom Excerpts callback
 function onwaartswp_excerpt($length_callback = '', $more_callback = '')
 {
