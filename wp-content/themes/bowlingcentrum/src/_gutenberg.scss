@@ -129,7 +129,26 @@
     
 }
 
+// Compliance Document 
+#cmplz-document.cmplz-document {
+    @apply text-white;
 
+    h1, 
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-white font-bold;
+    }
+
+    ul {
+        @apply text-white mb-7 -mt-5 pl-5;
+        li {
+            @apply text-white list-disc list-inside;
+        }
+    }
+}
 
 // GRAVITY FORMS
 // ====================================
@@ -159,11 +178,11 @@
         }
 
         :where(input[type=text], input[type=email], input[type=tel], input[type=url], input[type=number], input[type=password], textarea) {
-            @apply block w-full border border-gray-200 rounded-md px-6 py-4 text-base text-white leading-6 focus:outline-none focus:border-primary;
+            @apply bg-primary text-white block w-full border border-primary rounded-md px-6 py-4 text-base leading-6 focus:outline-none focus:border-white;
         }
 
         input[type=checkbox], input[type=radio] {
-            @apply inline-block border border-gray-200 rounded-lg px-3 py-2 text-base text-white leading-6 focus:outline-none focus:border-primary accent-primary;
+            @apply inline-block border border-gray-200 rounded-lg px-3 py-2 text-base text-white leading-6 focus:outline-none focus:border-primary accent-accent;
         }
 
         input[type=checkbox] {
@@ -176,7 +195,7 @@
             background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" xml:space="preserve"><path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z"/><path fill="none" d="M0,0h24v24H0V0z"/></svg>');
             background-position: center right;
             background-repeat: no-repeat;
-            @apply px-6 py-4 pr-8;
+            @apply px-6 py-4 pr-8 bg-primary text-white;
         }
 
         .ginput_container_consent {

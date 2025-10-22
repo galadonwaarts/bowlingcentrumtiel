@@ -43,17 +43,21 @@ get_header(); ?>
                     <h2 class="hidden md:block"><?php _e('Contact', 'bowlingcentrum'); ?></h2>
                     <div class="space-y-4 mb-8">
                         <div class="flex items-center gap-14">
-                            <i class="fa-solid fa-location-dot text-primary size-6"></i>
+                            <i class="fa-solid fa-location-dot text-white size-6"></i>
                             <p class="text-white mb-0"><?php echo get_field('g_address', 'option'); ?></p>
                         </div>
-                        <div class="flex items-center gap-14">
-                            <i class="fa-solid fa-phone text-primary size-6"></i>
-                            <p class="text-white mb-0"><?php echo get_field('g_phone', 'option'); ?></p>
-                        </div>
-                        <div class="flex items-center gap-14">
-                            <i class="fa-solid fa-envelope text-primary size-6"></i>
-                            <p class="text-white mb-0"><?php echo get_field('g_mail', 'option'); ?></p>
-                        </div>
+                        <?php if (get_field('g_phone', 'option')) : ?>
+                            <a href="tel:<?php echo get_field('g_phone', 'option'); ?>" class="flex items-center gap-14 text-white hover:underline underline-offset-4">
+                                <i class="fa-solid fa-phone text-white size-6"></i>
+                                <?php echo get_field('g_phone', 'option'); ?>
+                            </a>
+                        <?php endif; ?>
+                        <?php if (get_field('g_mail', 'option')) : ?>
+                            <a href="mailto:<?php echo get_field('g_mail', 'option'); ?>" class="flex items-center gap-14 text-white hover:underline underline-offset-4">
+                                <i class="fa-solid fa-envelope text-white size-6"></i>
+                                <?php echo get_field('g_mail', 'option'); ?>
+                            </a>
+                        <?php endif; ?>
                     </div>
                     <a class="btn w-full" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
                 </div>

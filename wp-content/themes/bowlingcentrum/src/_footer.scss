@@ -27,7 +27,7 @@ footer {
         @apply mt-3 lg:mt-6;
 
         a {
-            @apply text-base leading-6 text-secondary font-sans font-normal hover:text-primary hover:underline;
+            @apply text-base leading-6 text-secondary font-sans font-normal hover:underline underline-offset-4;
           }
 
         p {

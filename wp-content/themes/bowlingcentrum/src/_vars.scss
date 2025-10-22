@@ -20,11 +20,15 @@ h2, .h2 {
     @apply mb-8 uppercase text-white text-3xl font-bold sm:text-4xl font-serif;
 }
 h3, .h3 {
-    @apply mb-5 text-xl font-bold font-serif;
+    @apply mb-5 text-xl text-white font-bold font-serif;
 }
 
 h4 {
-    @apply font-bold font-serif;
+    @apply mb-3 text-white font-bold font-serif;
+}
+
+h5, h6 {
+    @apply  text-white;
 }
 
 p {
